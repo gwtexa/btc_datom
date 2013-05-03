@@ -1,0 +1,66 @@
+[
+ ;; block
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/version
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block header version"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/height
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block height"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/time
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block time"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/hash
+  :db/unique :db.unique/value
+  ;:db/index true ; enable later to test query performance 
+  :db/valueType :db.type/bigint
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block hash"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/bits
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block difficulty target"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/nonce
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block nonce"
+  :db.install/_attribute :db.part/db}
+
+
+ ;probably not needed in db
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/hashPrev
+  :db/valueType :db.type/bigint
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block previous hash"
+  :db.install/_attribute :db.part/db}
+
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :block/hashMerkleRoot
+  :db/valueType :db.type/bigint
+  :db/cardinality :db.cardinality/one
+  :db/doc "Block hash merkle root"
+  :db.install/_attribute :db.part/db}
+
+
+]
